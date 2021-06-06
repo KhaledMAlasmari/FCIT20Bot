@@ -16,7 +16,7 @@ def driveFolders(update, context):
     <a href='https://drive.google.com/drive/folders/0BxTTBNO16o2DVG5uQU96YzIzMDQ'>درايف علوم حاسب - 15</a> \n
     <a href='https://drive.google.com/drive/folders/1eCO7-OEzR0MxdDmIWmRMmA4m4r6FzL8q'>درايف علوم حاسب - 16</a> \n
     <a href='https://drive.google.com/drive/folders/1-6DWIYRVG-khvM_-tmLkU-hHjdPLgmmH'>درايف علوم حاسب - 17</a> \n
-    <a href='https://drive.google.com/drive/folders/16EzY5HRid_UQMNgTT8tuXMD_ABYqxe45'>درايف دفعة 18</a> \n
+    <a href='http://fcit18.link/'>درايف دفعة 18</a> \n
     <a href='https://drive.google.com/drive/u/3/folders/1v_CJph-q7Y6YmHgVC3eRR7lC6L4Rfaai'>درايف دفعة 19</a> \n
     <a href='https://drive.google.com/drive/folders/0B9g1JPI3agkCZF96bWlsdndzNzg'>درايف علوم حاسب - دفعة (؟)</a> \n""",parse_mode=ParseMode.HTML)
 def channels(update, context):
