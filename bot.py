@@ -21,12 +21,11 @@ def driveFolders(update, context):
     <a href='https://drive.google.com/drive/folders/0B9g1JPI3agkCZF96bWlsdndzNzg'>درايف علوم حاسب - دفعة (؟)</a> \n""",parse_mode=ParseMode.HTML)
 def channels(update, context):
     update.message.reply_text(text="""القنوات المتاحة: \n
+    <a href='https://t.me/FCIT20_CS'>قنوات علوم الحاسبات</a> \n
+    <a href='https://t.me/FCIT20_IT'>قنوات تقنية المعلومات</a> \n
+    <a href='https://t.me/FCIT20_IS_1'>قنوات نظم المعلومات</a> \n
+    <a href='https://t.me/FCIT20_Shared'>قنوات المواد المشتركة</a> \n
     <a href='https://t.me/FcitBank'>بنك المعلومات الطلابي FCIT</a> \n
-    <a href='https://t.me/FCIT_20_CPCS_222'>تراكيب متقطعة - CPCS222</a> \n
-    <a href='https://t.me/joinchat/URLJZcFv2svJcpF8'>برمجة 2 - CPCS203</a> \n
-    <a href='https://t.me/FCIT20_CPCS204'>برمجة 3 - CPCS204</a> \n
-    <a href='https://t.me/CPIT220'>مقدمة لتقنية المعلومات  -  CPIT220</a> \n
-    <a href='https://t.me/AMath202'>تفاضل وتكامل 2 - MATH202</a> \n
     <a href='https://t.me/FCIT20Male'>قروب MAFIA 20 ، (مناقشة أو إستفسار تعال هنا):</a> \n""",parse_mode=ParseMode.HTML)
     update.message.reply_text(text="",parse_mode=ParseMode.HTML)
 
