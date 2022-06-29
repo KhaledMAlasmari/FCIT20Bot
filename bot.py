@@ -34,8 +34,7 @@ def avaliableCommands(update, context):
     1- درايف \n
     2- قنوات \n
     3- بوت20 \n
-    4- discord
-    5- تواصل""")
+    4- discord""")
 def contactMe(update, context):
     update.message.reply_text("""للتواصل:\n
     <a href='https://twitter.com/KhaledMAlasmari'>تويتر</a> \n
@@ -59,7 +58,6 @@ def main():
     dp.add_handler(MessageHandler(Filters.text(["درايف"]), driveFolders))
     dp.add_handler(MessageHandler(Filters.text(["قنوات"]), channels))
     dp.add_handler(MessageHandler(Filters.text(["بوت20"]), avaliableCommands))
-    dp.add_handler(MessageHandler(Filters.text(["تواصل"]), contactMe))
     dp.add_handler(MessageHandler(Filters.text(["discord"]), discordServer))
 
     updater.start_webhook(listen="0.0.0.0",
