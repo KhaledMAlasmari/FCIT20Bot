@@ -7,7 +7,7 @@ import os
 PORT = int(os.environ.get('PORT', 5000))
 
 TOKEN = os.environ.get('TOKEN')
-
+WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
 
 def driveFolders(update, context):
     update.message.reply_text(text="""الدرايفات المتاحة: \n
@@ -63,7 +63,7 @@ def main():
     updater.start_webhook(listen="0.0.0.0",
                             port=int(PORT),
                             url_path=TOKEN)
-    updater.bot.setWebhook('https://fcit20bot.herokuapp.com/' + TOKEN)
+    updater.bot.setWebhook(f'{WEBHOOK_URL}/{TOKEN}')
 
     updater.idle()
 
