@@ -22,7 +22,7 @@ def driveFolders(update, context):
 	<a href='https://bit.ly/2KZBuxG'>دفعة 19</a> \n
 	<a href='https://drive.google.com/drive/folders/1mQkfU0QZKvUzueZaEiw6OZTH2ApXJiPB'>دفعة 20</a> \n
 	<a href='https://drive.google.com/drive/u/0/folders/1mPQNueRjBXexBYAZVJWCKSc_7osuQMHw?lfhs=2'>دفعة 20 - تسجيلات الدكاترة</a> \n
-	<a href='https://drive.google.com/drive/folders/1Yg7EDNRkTA4QLG71lgnriwt2jD-e2zeW'>دفعة 21</a> \n\n""",parse_mode=ParseMode.HTML)
+	<a href='https://drive.google.com/drive/folders/1Yg7EDNRkTA4QLG71lgnriwt2jD-e2zeW'>دفعة 21</a> \n""",parse_mode=ParseMode.HTML)
 def channels(update, context):
     update.message.reply_text(text="""القنوات المتاحة: \n
     <a href='https://t.me/FCIT20_CS'>قنوات علوم الحاسبات</a> \n
