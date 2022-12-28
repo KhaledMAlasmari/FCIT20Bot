@@ -10,15 +10,19 @@ TOKEN = os.environ.get('TOKEN')
 WEBHOOK_URL = os.environ.get('WEBHOOK_URL')
 
 def driveFolders(update, context):
-    update.message.reply_text(text="""الدرايفات المتاحة: \n
-    <a href='https://drive.google.com/drive/folders/19e5ISP2SixVw3if__J6ILxCo9ZrojH-Y'>درايف مافيا</a> \n
-    <a href='https://drive.google.com/drive/u/0/folders/0B8oC3yMWyRu6SjRCek40Tmx3bDQ'>درايف علوم حاسب - 14</a> \n
-    <a href='https://drive.google.com/drive/folders/0BxTTBNO16o2DVG5uQU96YzIzMDQ'>درايف علوم حاسب - 15</a> \n
-    <a href='https://drive.google.com/drive/folders/1eCO7-OEzR0MxdDmIWmRMmA4m4r6FzL8q'>درايف علوم حاسب - 16</a> \n
-    <a href='https://drive.google.com/drive/folders/1-6DWIYRVG-khvM_-tmLkU-hHjdPLgmmH'>درايف علوم حاسب - 17</a> \n
-    <a href='http://fcit18.link/'>درايف دفعة 18</a> \n
-    <a href='https://drive.google.com/drive/u/3/folders/1v_CJph-q7Y6YmHgVC3eRR7lC6L4Rfaai'>درايف دفعة 19</a> \n
-    <a href='https://drive.google.com/drive/folders/0B9g1JPI3agkCZF96bWlsdndzNzg'>درايف علوم حاسب - دفعة (؟)</a> \n""",parse_mode=ParseMode.HTML)
+    update.message.reply_text(text=	"""درايفات الطلاب: \n
+	<a href='https://drive.google.com/drive/folders/1eCO7-OEzR0MxdDmIWmRMmA4m4r6FzL8q'>دفعة 16</a> \n
+	<a href='https://drive.google.com/drive/folders/1x2HaC3PF0ExBtw62AZ4uYmUPCUpiCEoK'>دفعة 17</a> \n
+	<a href='http://fcit18.link/'>دفعة 18</a> \n
+	<a href='https://drive.google.com/drive/u/0/folders/1v_CJph-q7Y6YmHgVC3eRR7lC6L4Rfaai'>دفعة 19</a> \n
+	<a href='https://drive.google.com/drive/folders/19e5ISP2SixVw3if__J6ILxCo9ZrojH-Y'>دفعة 20 (مافيا)</a> \n
+	<a href='https://drive.google.com/drive/u/2/folders/1vEI6drswcgZeRipqURtUQMh-jFUqBnXt'>دفعة 21</a> \n
+	درايفات الطالبات: \n
+	<a href='https://cutt.ly/RyXrwgs'>دفعة 18</a> \n
+	<a href='https://bit.ly/2KZBuxG'>دفعة 19</a> \n
+	<a href='https://drive.google.com/drive/folders/1mQkfU0QZKvUzueZaEiw6OZTH2ApXJiPB'>دفعة 20</a> \n
+	<a href='https://drive.google.com/drive/u/0/folders/1mPQNueRjBXexBYAZVJWCKSc_7osuQMHw?lfhs=2'>دفعة 20 - تسجيلات الدكاترة</a> \n
+	<a href='https://drive.google.com/drive/folders/1Yg7EDNRkTA4QLG71lgnriwt2jD-e2zeW'>دفعة 21</a> \n""",parse_mode=ParseMode.HTML)
 def channels(update, context):
     update.message.reply_text(text="""القنوات المتاحة: \n
     <a href='https://t.me/FCIT20_CS'>قنوات علوم الحاسبات</a> \n
