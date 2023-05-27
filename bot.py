@@ -85,7 +85,7 @@ class CustomContext(CallbackContext[ExtBot, dict, dict, dict]):
 
 
 async def driveFolders(update: Update, context):
-    update.message.reply_text(text="""درايفات الطلاب: \n
+    await update.message.reply_text(text="""درايفات الطلاب: \n
 	<a href='https://drive.google.com/drive/folders/1eCO7-OEzR0MxdDmIWmRMmA4m4r6FzL8q'>دفعة 16</a> \n
 	<a href='https://drive.google.com/drive/folders/1x2HaC3PF0ExBtw62AZ4uYmUPCUpiCEoK'>دفعة 17</a> \n
 	<a href='http://fcit18.link/'>دفعة 18</a> \n
@@ -101,29 +101,24 @@ async def driveFolders(update: Update, context):
 
 
 async def channels(update: Update, context):
-    update.message.reply_text(text="""القنوات المتاحة: \n
+    await update.message.reply_text(text="""القنوات المتاحة: \n
     <a href='https://t.me/FCIT20_CS'>قنوات علوم الحاسبات</a> \n
     <a href='https://t.me/FCIT20_IT'>قنوات تقنية المعلومات</a> \n
     <a href='https://t.me/FCIT20_IS_1'>قنوات نظم المعلومات</a> \n
     <a href='https://t.me/FCIT20_Shared'>قنوات المواد المشتركة</a> \n
     <a href='https://t.me/FcitBank'>بنك المعلومات الطلابي FCIT</a> \n
     <a href='https://t.me/FCIT20Male'>قروب MAFIA 20 ، (مناقشة أو إستفسار تعال هنا):</a> \n""",parse_mode=ParseMode.HTML)
-    update.message.reply_text(text="",parse_mode=ParseMode.HTML)
 
 async def avaliableCommands(update: Update, context):
-    update.message.reply_text("""الأوامر المتاحة: \n
+    await update.message.reply_text("""الأوامر المتاحة: \n
     1- درايف \n
     2- قنوات \n
     3- بوت20 \n
     4- discord""")
-async def contactMe(update: Update, context):
-    update.message.reply_text("""للتواصل:\n
-    <a href='https://twitter.com/KhaledMAlasmari'>تويتر</a> \n
-    <a href='https://KhaledAlAsmari.com/'>موقعي</a> \n""", parse_mode= ParseMode.HTML)
 
 
 async def discordServer(update: Update, context):
-     update.message.reply_text("<a href='https://discord.com/invite/9wyYEY9gcg'>Programmers of KAU</a>", parse_mode= ParseMode.HTML)
+    await update.message.reply_text("<a href='https://discord.com/invite/9wyYEY9gcg'>Programmers of KAU</a>", parse_mode= ParseMode.HTML)
 
 
 
@@ -165,6 +160,7 @@ async def main() -> None:
         await application.update_queue.put(
             Update.de_json(data=await request.json(), bot=application.bot)
         )
+        
         return Response()
 
     async def health(_: Request) -> PlainTextResponse:
