@@ -14,7 +14,6 @@ You may also need to change the `listen` value in the uvicorn configuration to m
 Press Ctrl-C on the command line or send a signal to the process to stop the bot.
 """
 import asyncio
-import html
 import logging
 from dataclasses import dataclass
 from http import HTTPStatus
@@ -49,7 +48,6 @@ from telegram.ext import (
     filters,
     ContextTypes,
     ExtBot,
-    TypeHandler,
 )
 
 # Enable logging
