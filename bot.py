@@ -24,7 +24,7 @@ from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse, Response
 from starlette.routing import Route
-
+from get_exam_schedule import get_exam_schedule
 from telegram import __version__ as TG_VER
 
 try:
@@ -119,7 +119,14 @@ async def discordServer(update: Update, context):
     await update.message.reply_text("<a href='https://discord.com/invite/9wyYEY9gcg'>Programmers of KAU</a>", parse_mode= ParseMode.HTML)
 
 
+## exam schedule
+data_list = ""
 
+async def getCourseInfo(update: Update, context):
+     message = update.message
+     text = message.text.split()[1]
+     course = data_list.get(text)
+     await update.message.reply_text("Course: "+text+"\nStudents: "+data_list[0]+"\nLocation: "+data_list[1]+"\nTime: "+data_list[2]+"\ndate: "+data_list[3])
 
 
 async def main() -> None:
