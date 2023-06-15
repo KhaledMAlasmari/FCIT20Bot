@@ -29,5 +29,9 @@ def get_exam_schedule():
             date = df.iloc[i,1]
 
         data_list[df.iloc[i, 2]]=[str(df.iloc[i, 3]),df.iloc[i, 4],df.iloc[i, 5],date]
-        
+    
+    print(data_list.get("CPIS-312"))
     return data_list
+
+
+get_exam_schedule()
