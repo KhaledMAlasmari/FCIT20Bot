@@ -149,6 +149,12 @@ async def main() -> None:
     application.add_handler(MessageHandler(filters.Text(["قنوات"]), channels))
     application.add_handler(MessageHandler(filters.Text(["بوت20"]), avaliableCommands))
     application.add_handler(MessageHandler(filters.Text(["discord"]), discordServer))
+
+    # Exam schedule 
+    
+    application.add_handler(MessageHandler(filters.Regex(r'/موعد (cpcs|CPCS|cpit|CPIT|cpis|CPIS)-\d{3}/gm'), discordServer))
+    
+
     # Pass webhook settings to telegram
     await application.bot.set_webhook(url=f"{url}/telegram")
 
