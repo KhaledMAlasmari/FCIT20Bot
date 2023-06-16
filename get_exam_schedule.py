@@ -33,3 +33,5 @@ def get_exam_schedule(url):
     print(data_list.get("CPIS-312"))
     return data_list
 
+
+get_exam_schedule()
