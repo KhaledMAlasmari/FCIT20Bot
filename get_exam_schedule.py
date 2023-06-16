@@ -3,9 +3,9 @@ import pandas as pd
 
 
 # this function will return json file that contain all the information of the schedule
-def get_exam_schedule():
+def get_exam_schedule(url):
 
-    response = requests.get("https://docs.google.com/spreadsheets/d/e/2PACX-1vRbuH_vaKHql1sWp6wBmDYKIqv2L6fNvV2d7v7bnP14FtaDZn3gkBl1xTjrCP061XwF1K8VmiiJSZdH/pubhtml?gid=0&single=true")
+    response = requests.get(url)
 
 
     tables = pd.read_html(response.text)

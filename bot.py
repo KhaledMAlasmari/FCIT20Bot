@@ -120,12 +120,12 @@ async def discordServer(update: Update, context):
 
 
 ## exam schedule
-data_list = ""
+data_list = ''
 
 async def getCourseInfo(update: Update, context):
      message = update.message
      text = message.text.split()[1]
-     course = data_list.get(text)
+     course = data_list.get(text.capitalize())
      await update.message.reply_text("Course: "+text+"\nStudents: "+data_list[0]+"\nLocation: "+data_list[1]+"\nTime: "+data_list[2]+"\ndate: "+data_list[3])
 
 
@@ -134,9 +134,10 @@ async def main() -> None:
     port = int(os.environ.get('PORT', 5000))
     token = os.environ.get('TOKEN')
     url = os.environ.get('WEBHOOK_URL')
+    exam_url = os.environ.get("exam_url")
     admin_chat_id = os.environ.get('admin_chat_id')
 
-
+    data_list = get_exam_schedule(exam_url)
     
     context_types = ContextTypes(context=CustomContext)
     # Here we set updater to None because we want our custom webhook server to handle the updates
