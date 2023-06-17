@@ -130,6 +130,7 @@ async def main() -> None:
     port = int(os.environ.get('PORT', 5000))
     token = os.environ.get('TOKEN')
     url = os.environ.get('WEBHOOK_URL')
+    exam_url = os.environ.get('exam_url')
     admin_chat_id = os.environ.get('admin_chat_id')
 
     data_list = await get_exam_schedule(exam_url)
