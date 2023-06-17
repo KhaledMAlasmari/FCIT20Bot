@@ -155,7 +155,7 @@ async def main() -> None:
 
     # Exam schedule 
     
-    application.add_handler(MessageHandler(filters.Regex(r'/موعد (cpcs|CPCS|cpit|CPIT|cpis|CPIS)-\d{3}/gm'), getCourseInfo))
+    application.add_handler(MessageHandler(filters.Regex(r'موعد (?:cpcs|CPCS|cpit|CPIT|cpis|CPIS)-\d{3}'), getCourseInfo))
     
 
     # Pass webhook settings to telegram
