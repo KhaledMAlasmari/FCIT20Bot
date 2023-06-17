@@ -120,7 +120,9 @@ async def getCourseInfo(update: Update, context):
      message = update.message
      text = message.text.split()[1]
      course = data_list.get(text.upper())
-     await update.message.reply_text("Course: "+text+"\nStudents: "+course[0]+"\nLocation: "+course[1]+"\nTime: "+course[2]+"\ndate: "+course[3])
+     if course:
+        await update.message.reply_text("Course: "+text+"\nStudents: "+course[0]+"\nLocation: "+course[1]+"\nTime: "+course[2]+"\ndate: "+course[3])
+
 
 
 
