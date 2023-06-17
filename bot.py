@@ -89,13 +89,7 @@ async def driveFolders(update: Update, context):
 	<a href='http://fcit18.link/'>دفعة 18</a> \n
 	<a href='https://drive.google.com/drive/u/0/folders/1v_CJph-q7Y6YmHgVC3eRR7lC6L4Rfaai'>دفعة 19</a> \n
 	<a href='https://drive.google.com/drive/folders/19e5ISP2SixVw3if__J6ILxCo9ZrojH-Y'>دفعة 20 (مافيا)</a> \n
-	<a href='https://drive.google.com/drive/u/2/folders/1vEI6drswcgZeRipqURtUQMh-jFUqBnXt'>دفعة 21</a> \n
-	درايفات الطالبات: \n
-	<a href='https://cutt.ly/RyXrwgs'>دفعة 18</a> \n
-	<a href='https://bit.ly/2KZBuxG'>دفعة 19</a> \n
-	<a href='https://drive.google.com/drive/folders/1mQkfU0QZKvUzueZaEiw6OZTH2ApXJiPB'>دفعة 20</a> \n
-	<a href='https://drive.google.com/drive/u/0/folders/1mPQNueRjBXexBYAZVJWCKSc_7osuQMHw?lfhs=2'>دفعة 20 - تسجيلات الدكاترة</a> \n
-	<a href='https://drive.google.com/drive/folders/1Yg7EDNRkTA4QLG71lgnriwt2jD-e2zeW'>دفعة 21</a> \n""",parse_mode=ParseMode.HTML)
+	<a href='https://drive.google.com/drive/u/2/folders/1vEI6drswcgZeRipqURtUQMh-jFUqBnXt'>دفعة 21</a> \n""",parse_mode=ParseMode.HTML)
 
 
 async def channels(update: Update, context):
@@ -119,16 +113,26 @@ async def discordServer(update: Update, context):
     await update.message.reply_text("<a href='https://discord.com/invite/9wyYEY9gcg'>Programmers of KAU</a>", parse_mode= ParseMode.HTML)
 
 
+## exam schedule
+
+
+async def getCourseInfo(update: Update, context):
+     message = update.message
+     text = message.text.split()[1]
+     course = data_list.get(text.upper())
+     await update.message.reply_text("Course: "+text+"\nStudents: "+course[0]+"\nLocation: "+course[1]+"\nTime: "+course[2]+"\ndate: "+course[3])
 
 
 
 async def main() -> None:
+    global data_list
     """Set up the application and a custom webserver."""
     port = int(os.environ.get('PORT', 5000))
     token = os.environ.get('TOKEN')
     url = os.environ.get('WEBHOOK_URL')
     admin_chat_id = os.environ.get('admin_chat_id')
 
+    data_list = await get_exam_schedule(exam_url)
 
     
     context_types = ContextTypes(context=CustomContext)
@@ -149,6 +153,12 @@ async def main() -> None:
     application.add_handler(MessageHandler(filters.Text(["قنوات"]), channels))
     application.add_handler(MessageHandler(filters.Text(["بوت20"]), avaliableCommands))
     application.add_handler(MessageHandler(filters.Text(["discord"]), discordServer))
+
+    # Exam schedule 
+    
+    application.add_handler(MessageHandler(filters.Regex(r'موعد (?:cpcs|CPCS|cpit|CPIT|cpis|CPIS)-\d{3}'), getCourseInfo))
+    
+
     # Pass webhook settings to telegram
     await application.bot.set_webhook(url=f"{url}/telegram")
 
