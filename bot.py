@@ -26,7 +26,7 @@ from starlette.responses import PlainTextResponse, Response
 from starlette.routing import Route
 
 from telegram import __version__ as TG_VER
-
+from get_exam_schedule import get_exam_schedule
 try:
     from telegram import __version_info__
 except ImportError:
