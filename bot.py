@@ -133,7 +133,7 @@ async def main() -> None:
     exam_url = os.environ.get('exam_url')
     admin_chat_id = os.environ.get('admin_chat_id')
 
-    data_list = await get_exam_schedule(exam_url)
+    data_list = get_exam_schedule(exam_url)
 
     
     context_types = ContextTypes(context=CustomContext)
