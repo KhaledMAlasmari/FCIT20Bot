@@ -24,7 +24,7 @@ from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import PlainTextResponse, Response
 from starlette.routing import Route
-from get_exam_schedule import get_exam_schedule
+
 from telegram import __version__ as TG_VER
 
 try:
@@ -123,16 +123,17 @@ async def getCourseInfo(update: Update, context):
      await update.message.reply_text("Course: "+text+"\nStudents: "+course[0]+"\nLocation: "+course[1]+"\nTime: "+course[2]+"\ndate: "+course[3])
 
 
+
 async def main() -> None:
     global data_list
     """Set up the application and a custom webserver."""
     port = int(os.environ.get('PORT', 5000))
     token = os.environ.get('TOKEN')
     url = os.environ.get('WEBHOOK_URL')
-    exam_url = os.environ.get("exam_url")
     admin_chat_id = os.environ.get('admin_chat_id')
 
     data_list = await get_exam_schedule(exam_url)
+
     
     context_types = ContextTypes(context=CustomContext)
     # Here we set updater to None because we want our custom webhook server to handle the updates
